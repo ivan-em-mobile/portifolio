@@ -20,36 +20,65 @@ paleta de cores deste site:
 }
 
 body {
-    background-color: #007ec3;
-    color: #fff;
+    /* background-image: linear-gradient(to bottom,#00bad3 50%, #00728a 100%);
+    background-repeat: repeat; */
+    background-image: linear-gradient(to bottom, #00bad3 50%, #00728a 100%);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    justify-content: flex-start;
     display: flexbox;
 }
 
 header {
+    height: 135px;
+    border-radius: 05px;
+    /* border: solid #0096af 3px; */
     background-color: #265667;
-    height: 200px;
-    padding: 7px;
+    padding: 7px 15px;
+    align-items: center;
+    text-align: center;
 }
 
 nav {
+
+    height: 35px;
+    border-radius: 5px;
+    /* border: solid #0096af 3px;
+    text-align: center;
+    vertical-align: middle; */
     padding: 7px;
     background-color: #00737a;
-    text-align: center;
-    vertical-align: middle;
     height: 35px;
+    align-items: center;
+    text-align: center;
 }
 
 main {
+    /* height: auto; */
+
+    height: 100%;
+    border-radius: 05px;
+    /* border: solid #0096af 3px; */
     background-color: #00817d;
-    height: auto;
     padding: 7px;
 }
 
 footer {
-    background-color: #2f4858;
-    text-align: center;
-    vertical-align:center;
+    /* border-color: #00bad3; */
+    /* border-style: solid; */
+    /* text-align: center;
+       vertical-align: center;
+    */
+    /* border: solid #0096af 3px; */
     height: 85px;
+    border-radius: 5px;
+    background-color: #2f4858;
     padding: 17px;
 }
 
@@ -74,8 +103,17 @@ footer {
 
 }
 
-#imagmain{
+#imagmain {
     max-height: 100%;
+}
+
+#iconav {
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+    margin-bottom: -5px;
+    align-items: center;
+    text-align: justify;
 }
 
 a {
