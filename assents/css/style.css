@@ -26,7 +26,7 @@ body {
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
-    
+
     color: whitesmoke;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -48,16 +48,30 @@ header {
 
 nav {
 
-    height: 35px;
+    height: 045px;
     border-radius: 5px;
     /* border: solid #0096af 3px;
     text-align: center;
     vertical-align: middle; */
     padding: 7px;
-    /* background-color: #00737a; */
-    height: 35px;
+    background-color: #00737a;
+
     align-items: center;
     text-align: center;
+}
+
+button {
+    padding: 02px 12px;
+    margin: -3px 12px;
+    background-color: #00737a;
+    border: solid #00bad3 3px;
+    border-radius: 7px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+
 }
 
 main {
@@ -98,15 +112,15 @@ footer {
 
 }
 
+/* As configurações  abaixo foram adicionadas para melhorar a responsividade do site, no caso o tamanho de 
+100X100 no htmal deixa de ser usado para ser usado do CSS */
+
 .container img {
-    width: auto;
+    width: 270px;
+    height: 250px;
     margin-left: 7px;
     margin-right: 20px;
 
-}
-
-#imagmain {
-    max-height: 100%;
 }
 
 #iconav {
@@ -127,3 +141,9 @@ a:hover {
     color: #fff;
     text-transform: none;
 }
+
+
+/* 
+#imagmain {
+    max-height: 100%;
+} */
