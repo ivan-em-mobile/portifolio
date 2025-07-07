@@ -11,6 +11,16 @@ https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp
 
 */
 
+:root {
+    --maincolor: #bb1c1c;
+    --seccolor: #ffd700;
+    --destcolor: #ffe7c1;
+    /* Não pode ser a cor Black #000000;*/
+    --colortxt: #0d0d0d;
+    /* Não pode ser a cor White #ffffff;*/
+    --colortext2: #f2f2f2;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,15 +38,16 @@ html {
 /* Definição  do tamanho da tela */
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to bottom, #21203f, #e7bfa5);
+    background-image: linear-gradient(to bottom, var(--destcolor), var(--maincolor));
     background-repeat: no-repeat;
     background-position: top;
-    background-attachment: scroll;
+    /* background-attachment: scroll; */
+    background-attachment: fixed;
 
 }
 
 header {
-    background-color: #21203f;
+    background-color: var(--maincolor);
     margin-top: 3px;
     border-radius: 7px 7px 0px 0px;
     width: 90vw;
@@ -45,17 +56,17 @@ header {
 
 header>h1 {
     text-align: center;
-    color: whitesmoke;
+    color: var(--colortext2);
     padding: 3px;
-    text-shadow: #c5a898 1px 1px 10px;
+    text-shadow: var(--colortext1) 1px 1px 10px;
     margin-top: 17px;
 
 }
 
 #burger {
-    background-color: #21203f;
+    background-color: var(--maincolor);
     display: block;
-    color: whitesmoke;
+    color: var(--colortext2);
     text-align: center;
     margin: auto;
     padding: 7px;
@@ -64,13 +75,12 @@ header>h1 {
 }
 
 #burger:hover {
-    background-color: #c5a898;
+    background-color: var(--seccolor);
 }
 
 menu {
-    color: whitesmoke;
+    color: var(--colortext2);
     text-align: center;
-   /* list-style-type: none;*/
     width: 90vw;
     margin: auto;
 }
@@ -84,16 +94,16 @@ menu>ul>li>a {
     padding: 7px;
     text-decoration: none;
     text-align: center;
-    background-color: #21203f;
+    background-color: var(--seccolor);
     border-radius: 0px 0px 0px 0px;
-    color: whitesmoke;
+    color: var(--colortext2);
     margin: auto;
 
 }
 
 menu>ul>li>a:hover {
-    background-color: #c5a898;
-    color: whitesmoke;
+    background-color: var(--maincolor);
+    color: var(--colortext2);
     text-decoration: none;
 }
 
@@ -133,6 +143,7 @@ footer {
 /* configuração e definição de imagens para mobile-first */
 img {
     display: block;
+    /* tela esta visivel, hidden, none */
     margin: auto;
 }
 

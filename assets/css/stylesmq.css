@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* Criando um mobile-first
+https://paletadecores.com/paleta/21203f/fff1ce/e7bfa5/c5a898/4b3c5d/
+https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp
+    device breakpoints
+     mobile 600 px 
+     tablet 768 px
+     desktop 992 px
+     smart_tv 1200 px
+
+*/
+
+:root {
+    --maincolor: #bb1c1c;
+    --seccolor: #ffd700;
+    --destcolor: #ffe7c1;
+    /* Não pode ser a cor Black #000000;*/
+    --colortxt: #0d0d0d;
+    /* Não pode ser a cor White #ffffff;*/
+    --colortext2: #f2f2f2;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+img#mobile {
+    display: block;
+}
+img#tablet {
+    display: none;
+}
+img#print {
+    display: none;
+}
+img#pc {
+    display: none;
+}
+img#tv {
+    display: none;
+}
