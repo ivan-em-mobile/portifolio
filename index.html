@@ -1,722 +1,534 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos Integradores Finalizados</title>
-    <style>
-        /* =========================================================
-       1. ESTILOS BASE E MOBILE (TELAS MENORES QUE 768px)
-       ========================================================= */
-        * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos Finais • Web Design Vocação 2026-2</title>
+  <meta name="description" content="Projetos finais dos jovens do curso de Web Design da Vocação.">
+  
+  <!-- Fontes externas para tipografia moderna -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
 
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            padding: 12px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 20px 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 1.4em;
-            margin-bottom: 6px;
-        }
-
-        header p {
-            font-size: 0.88em;
-            opacity: 0.9;
-        }
-
-        .container {
-            width: 100%;
-            margin: 0 auto;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Top 7 Destaques */
-        .destaques-section {
-            margin-bottom: 25px;
-        }
-
-        .destaques-section h2 {
-            color: #1e3c72;
-            margin-bottom: 15px;
-            font-size: 1.25em;
-            text-align: center;
-        }
-
-        .cards-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h3 {
-            color: #2c3e50;
-            font-size: 1.05em;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            font-size: 0.85em;
-            color: #555;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .card-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .btn {
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.88em;
-            font-weight: bold;
-            text-align: center;
-            display: block;
-        }
-
-        .btn-primary {
-            background-color: #2a5298;
-            color: #ffffff;
-        }
-
-        .btn-secondary {
-            background-color: #e2e8f0;
-            color: #2d3748;
-        }
-
-        /* Área do Filtro */
-        .filter-container {
-            text-align: center;
-            margin: 20px 0;
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .btn-filter,
-        .btn-reset {
-            padding: 12px 20px;
-            font-size: 0.95em;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-
-        .btn-filter {
-            background-color: #2a5298;
-            color: white;
-            display: inline-block;
-        }
-
-        .btn-filter:hover {
-            background-color: #1e3c72;
-        }
-
-        .btn-reset {
-            background-color: #6c757d;
-            color: white;
-            display: none;
-        }
-
-        .btn-reset:hover {
-            background-color: #5a6268;
-        }
-
-        /* FORMATO DE CARTÕES PARA CELULARES */
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-        }
-
-        #tabelaProjetos thead {
-            display: none;
-            /* Oculta o cabeçalho padrão da tabela no celular */
-        }
-
-        #tabelaProjetos,
-        #tabelaProjetos tbody,
-        #tabelaProjetos tr,
-        #tabelaProjetos td {
-            display: block;
-            width: 100%;
-        }
-
-        #tabelaProjetos tbody tr {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        #tabelaProjetos td {
-            padding: 8px 0;
-            border-bottom: 1px dashed #edf2f7;
-            font-size: 0.9em;
-        }
-
-        #tabelaProjetos td:last-child {
-            border-bottom: none;
-        }
-
-        /* Pseudo-cabeçalhos para mobile */
-        #tabelaProjetos td::before {
-            font-weight: bold;
-            color: #2a5298;
-            display: block;
-            font-size: 0.78em;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-
-        #tabelaProjetos td:nth-of-type(1)::before {
-            content: "Nome do Jovem:";
-        }
-
-        #tabelaProjetos td:nth-of-type(2)::before {
-            content: "Turma:";
-        }
-
-        #tabelaProjetos td:nth-of-type(3)::before {
-            content: "Links Executáveis:";
-        }
-
-        #tabelaProjetos td:nth-of-type(4)::before {
-            content: "Repositório GitHub:";
-        }
-
-        .tag-turma {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            font-weight: bold;
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .btn-link {
-            display: inline-block;
-            margin: 2px 0;
-            padding: 6px 10px;
-            background-color: #eef2f5;
-            border-radius: 4px;
-            font-size: 0.85em;
-            color: #1a0dab;
-        }
-
-
-        /* =========================================================
-       2. ADAPTAÇÃO PARA TELAS GRANDES (MEDIA QUERY >= 768px)
-       ========================================================= */
-        @media (min-width: 768px) {
-            body {
-                padding: 30px;
-            }
-
-            .container {
-                max-width: 1200px;
-                padding: 25px;
-            }
-
-            header h1 {
-                font-size: 2.2em;
-            }
-
-            header p {
-                font-size: 1.1em;
-            }
-
-            .cards-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 20px;
-            }
-
-            .card-buttons {
-                flex-direction: row;
-            }
-
-/* RESTAURAÇÃO DA TABELA TRADICIONAL NO DESKTOP */
-        #tabelaProjetos {
-            display: table !important;
-            width: 100% !important;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        /* Exibe o cabeçalho original da tabela no desktop */
-        #tabelaProjetos thead {
-            display: table-header-group !important;
-        }
-
-        /* CORREÇÃO DO CABEÇALHO DA TABELA NO DESKTOP */
-        #tabelaProjetos thead th {
-            display: table-cell !important;
-            padding: 16px 14px;
-            text-align: left;
-            font-size: 1.1em !important;        /* Aumenta a fonte do cabeçalho */
-            font-weight: 700 !important;      /* Destaca o texto em negrito */
-            color: #1e3c72 !important;         /* Define a cor azul escura */
-            background-color: #f1f5f9 !important;/* Fundo suave para os títulos */
-            border-bottom: 2px solid #cbd5e1;
-        }
-
-        #tabelaProjetos tbody {
-            display: table-row-group !important;
-        }
-
-        #tabelaProjetos tbody tr {
-            display: table-row !important;
-            background: transparent;
-            border: none;
-            box-shadow: none;
-            margin-bottom: 0;
-            padding: 0;
-        }
-
-        #tabelaProjetos tbody tr:hover {
-            background-color: #f8fafc;
-        }
-
-        #tabelaProjetos td {
-            display: table-cell !important;
-            padding: 14px;
-            border-bottom: 1px solid #edf2f7;
-            font-size: 0.95em;
-            vertical-align: top;
-        }
-
-        /* Esconde os rótulos do mobile quando estiver no desktop */
-        #tabelaProjetos td::before {
-            display: none !important;
-        }
-
-        /* Distribuição proporcional da largura das colunas */
-        #tabelaProjetos th:nth-child(1), #tabelaProjetos td:nth-child(1) { width: 22%; }
-        #tabelaProjetos th:nth-child(2), #tabelaProjetos td:nth-child(2) { width: 15%; }
-        #tabelaProjetos th:nth-child(3), #tabelaProjetos td:nth-child(3) { width: 38%; }
-        #tabelaProjetos th:nth-child(4), #tabelaProjetos td:nth-child(4) { width: 25%; }
+  <!-- =========================================================
+       DOCUMENTAÇÃO CSS:
+       Define a paleta de cores (variáveis CSS), layout responsivo em grid,
+       estilização de cartões, botões e tipografia.
+       ========================================================= -->
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --ink: #111827;
+      --muted: #687386;
+      --line: #e5e7eb;
+      --accent: #6d4aff;
+      --accent-light: #f0efff;
+      --dark: #143270;
+      --shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
     }
-</style>
-</head>
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    /* --- Cabeçalho / Hero Section --- */
+    .hero {
+      background: var(--dark);
+      color: #ffffff;
+      padding-bottom: 72px;
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .brand b {
+      font-weight: 400;
+      opacity: 0.65;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .hero-content {
+      padding-top: 40px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #a99bff;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 0;
+      max-width: 900px;
+    }
+
+    .hero h1 span {
+      opacity: 0.5;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: #c7ccd6;
+      max-width: 650px;
+      margin: 24px 0 36px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-stats strong {
+      font-size: 1.5rem;
+    }
+
+    .hero-stats span {
+      font-size: 0.8rem;
+      color: #98a1b2;
+    }
+
+    /* --- Seções e Grid --- */
+    .section {
+      padding: 60px 0 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: -0.04em;
+      margin: 8px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    /* --- Cartões --- */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #d8d2ff;
+    }
+
+    .top-card {
+      position: relative;
+      border-left: 5px solid var(--accent);
+    }
+
+    .rank {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .project {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 10px 0 6px;
+      color: var(--ink);
+    }
+
+    .student {
+      font-weight: 600;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    .class-badge {
+      display: inline-block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    .why-box {
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: #4b5563;
+      background: #f8f7ff;
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0 0;
+    }
+
+    .why-box strong {
+      color: var(--ink);
+    }
+
+    .tag-team {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: #fff;
+      transition: background 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #f9fafb;
+    }
+
+    .btn.primary {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .btn.primary:hover {
+      background: #1f2937;
+    }
+
+    /* --- Estilos da Seção de Grupos --- */
+    .other-section {
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+    }
+
+    .members-list {
+      margin: 14px 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .members-list strong, .links-block strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .links-block {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .link-item {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 6px 10px;
+      background: #f7f6ff;
+      border-radius: 6px;
+      word-break: break-all;
+    }
+
+    .link-item:hover {
+      background: #ece8ff;
+    }
+
+    .link-item.repo {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    .link-item.repo:hover {
+      background: #e5e7eb;
+    }
+
+    footer {
+      margin-top: 80px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
 <body>
 
-    <header>
-        <h1>PROJETO TRABALHO EM AÇÃO</h1>
-        <p>Projetos Integradores Finalizados — Percurso Formativo Web Design (2026-2)</p>
-    </header>
+  <!-- =========================================================
+       DOCUMENTAÇÃO HTML:
+       Estrutura principal da página dividida em Hero, Top 11 e Grupos.
+       ========================================================= -->
+  <header class="hero">
+    <nav class="nav container">
+      <div class="brand">
+        <span class="brand-mark">V</span>
+        <span>Vocação <b>Web Design</b></span>
+      </div>
+      <a href="#projetos" class="nav-link">Ver projetos ↓</a>
+    </nav>
 
-    <div class="container">
-
-        <section class="destaques-section">
-            <h2>🌟 Top 7 Projetos com Deploy & GitHub</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>1. Mendes Car</h3>
-                    <p><strong>Autores:</strong> Felipe Mendes, Lucas Henrique, Diego Quirino e equipa</p>
-                    <div class="card-buttons">
-                        <a href="https://mendescar.vercel.app/" target="_blank" class="btn btn-primary">Aceder Site</a>
-                        <a href="https://github.com/felipemendesdopradosantos-dev/mendescar" target="_blank"
-                            class="btn btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>2. Cherry Royale</h3>
-                    <p><strong>Autores:</strong> Michelle Guedes, Stefani Sousa, Anna Carolina e equipa</p>
-                    <div class="card-buttons">
-                        <a href="https://cherry-royale.vercel.app/" target="_blank" class="btn btn-primary">Aceder
-                            Site</a>
-                        <a href="https://github.com/mich2009ags-creator/cherry_royale" target="_blank"
-                            class="btn btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>3. Moon Coffee</h3>
-                    <p><strong>Autores:</strong> Stefani dos Santos Sousa e equipa</p>
-                    <div class="card-buttons">
-                        <a href="https://moon-coffee-psi.vercel.app/" target="_blank" class="btn btn-primary">Aceder
-                            Site</a>
-                        <a href="https://github.com/stestes181-vocacao/moon_coffee" target="_blank"
-                            class="btn btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>4. Projetos Finais Lilac</h3>
-                    <p><strong>Autores:</strong> Wilson Silva, Leonardo Santana, Gustavo Araújo e equipa</p>
-                    <div class="card-buttons">
-                        <a href="https://projetos-finais-lilac.vercel.app/" target="_blank"
-                            class="btn btn-primary">Aceder Site</a>
-                        <a href="https://github.com/Wilson1407/projeto_final-2026" target="_blank"
-                            class="btn btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>5. Péricles Lanches</h3>
-                    <p><strong>Autor:</strong> Samuel Alves da Silva (Domínio Próprio .com.br)</p>
-                    <div class="card-buttons">
-                        <a href="https://pericleslanches.com.br/" target="_blank" class="btn btn-primary">Aceder
-                            Site</a>
-                        <a href="https://github.com/samuelalves0207/" target="_blank"
-                            class="btn btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>6. Projeto Fisio & Academia</h3>
-                    <p><strong>Autor:</strong> Ian Penafort Neves do Nascimento</p>
-                    <div class="card-buttons">
-                        <a href="https://projeto-fisio-six.vercel.app" target="_blank" class="btn btn-primary">Aceder
-                            Site</a>
-                        <a href="https://github.com/ian-eng021" target="_blank" class="btn btn-secondary">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>7. Projeto Final Vercel</h3>
-                    <p><strong>Autores:</strong> Gustavo Rocha De Jesus Dos Reis & Felipe Barros</p>
-                    <div class="card-buttons">
-                        <a href="https://projeto-final-2026-2.vercel.app/" target="_blank"
-                            class="btn btn-primary">Aceder Site</a>
-                        <a href="https://github.com/fellipeemvocacao/projeto-final-2026-2" target="_blank"
-                            class="btn btn-secondary">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ÁREA DO FILTRO -->
-        <div class="filter-container">
-            <button id="btnFiltrar" class="btn-filter" onclick="filtrarProjetosComDeploy()">
-                🚀 Filtrar: Mostrar apenas projetos com Deploy On-line
-            </button>
-            <button id="btnRestaurar" class="btn-reset" onclick="restaurarTabela()">
-                🔄 Mostrar Todos os Projetos
-            </button>
-        </div>
-
-        <!-- TABELA COMPLETA -->
-        <div class="table-container">
-            <table id="tabelaProjetos">
-                <thead>
-                    <tr>
-                        <th>Nome do Jovem</th>
-                        <th>Turma</th>
-                        <th>Links Executáveis (Projetos)</th>
-                        <th>Repositório GitHub</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Michelle Andrade Guedes Silva</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>
-                            <a href="https://odonto-trabalho.vercel.app/" target="_blank" class="btn-link">Odonto
-                                Trabalho</a><br>
-                            <a href="https://moon-coffee-psi.vercel.app/" target="_blank" class="btn-link">Moon
-                                Coffee</a><br>
-                            <a href="https://planet-pet-psi.vercel.app/" target="_blank" class="btn-link">Planet
-                                Pet</a><br>
-                            <a href="https://carolina-performing-arts.vercel.app" target="_blank"
-                                class="btn-link">Carolina Performing Arts</a><br>
-                            <a href="https://cherry-royale.vercel.app/" target="_blank" class="btn-link">Cherry
-                                Royale</a><br>
-                            <a href="https://nelson-e-murdock.vercel.app/" target="_blank" class="btn-link">Nelson e
-                                Murdock</a>
-                        </td>
-                        <td><a href="https://github.com/mich2009ags-creator/cherry_royale"
-                                target="_blank">github.com/mich2009ags-creator/cherry_royale</a></td>
-                    </tr>
-                    <tr>
-                        <td>Stefani dos Santos Sousa</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>
-                            <a href="https://odonto-trabalho.vercel.app/" target="_blank" class="btn-link">Odonto
-                                Trabalho</a><br>
-                            <a href="https://moon-coffee-psi.vercel.app/" target="_blank" class="btn-link">Moon
-                                Coffee</a><br>
-                            <a href="https://planet-pet-psi.vercel.app/" target="_blank" class="btn-link">Planet
-                                Pet</a><br>
-                            <a href="https://carolina-performing-arts.vercel.app" target="_blank"
-                                class="btn-link">Carolina Performing Arts</a><br>
-                            <a href="https://cherry-royale.vercel.app/" target="_blank" class="btn-link">Cherry
-                                Royale</a><br>
-                            <a href="https://nelson-e-murdock.vercel.app/" target="_blank" class="btn-link">Nelson e
-                                Murdock</a>
-                        </td>
-                        <td><a href="https://github.com/stestes181-vocacao/moon_coffee"
-                                target="_blank">github.com/stestes181-vocacao/moon_coffee</a></td>
-                    </tr>
-                    <tr>
-                        <td>Anna Carolina Oliveira de Souza</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>
-                            <a href="https://odonto-trabalho.vercel.app/" target="_blank" class="btn-link">Odonto
-                                Trabalho</a><br>
-                            <a href="https://moon-coffee-psi.vercel.app/" target="_blank" class="btn-link">Moon
-                                Coffee</a><br>
-                            <a href="https://planet-pet-psi.vercel.app/" target="_blank" class="btn-link">Planet
-                                Pet</a><br>
-                            <a href="https://carolina-performing-arts.vercel.app" target="_blank"
-                                class="btn-link">Carolina Performing Arts</a><br>
-                            <a href="https://cherry-royale.vercel.app/" target="_blank" class="btn-link">Cherry
-                                Royale</a><br>
-                            <a href="https://nelson-e-murdock.vercel.app/" target="_blank" class="btn-link">Nelson e
-                                Murdock</a>
-                        </td>
-                        <td><a href="https://github.com/annanana222/cherry-royale"
-                                target="_blank">github.com/annanana222/cherry-royale</a></td>
-                    </tr>
-                    <tr>
-                        <td>Ivo Branco Pereira da Silva</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>
-                            <a href="https://odonto-trabalho.vercel.app/" target="_blank" class="btn-link">Odonto
-                                Trabalho</a><br>
-                            <a href="https://moon-coffee-psi.vercel.app/" target="_blank" class="btn-link">Moon
-                                Coffee</a><br>
-                            <a href="https://planet-pet-psi.vercel.app/" target="_blank" class="btn-link">Planet
-                                Pet</a><br>
-                            <a href="https://carolina-performing-arts.vercel.app" target="_blank"
-                                class="btn-link">Carolina Performing Arts</a><br>
-                            <a href="https://cherry-royale.vercel.app/" target="_blank" class="btn-link">Cherry
-                                Royale</a><br>
-                            <a href="https://nelson-e-murdock.vercel.app/" target="_blank" class="btn-link">Nelson e
-                                Murdock</a>
-                        </td>
-                        <td><a href="https://github.com/artevivida" target="_blank">github.com/artevivida</a></td>
-                    </tr>
-                    <tr>
-                        <td>João Victor Andrade do Nascimento</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>
-                            <a href="https://odonto-trabalho.vercel.app/" target="_blank" class="btn-link">Odonto
-                                Trabalho</a><br>
-                            <a href="https://moon-coffee-psi.vercel.app/" target="_blank" class="btn-link">Moon
-                                Coffee</a><br>
-                            <a href="https://planet-pet-psi.vercel.app/" target="_blank" class="btn-link">Planet
-                                Pet</a><br>
-                            <a href="https://carolina-performing-arts.vercel.app" target="_blank"
-                                class="btn-link">Carolina Performing Arts</a><br>
-                            <a href="https://cherry-royale.vercel.app/" target="_blank" class="btn-link">Cherry
-                                Royale</a><br>
-                            <a href="https://nelson-e-murdock.vercel.app/" target="_blank" class="btn-link">Nelson e
-                                Murdock</a>
-                        </td>
-                        <td><a href="https://github.com/joao-victor-andrade"
-                                target="_blank">github.com/joao-victor-andrade</a></td>
-                    </tr>
-                    <tr>
-                        <td>Paulo Henrique Satiro Do Nascimento</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>Adote um Amigo | MLP Boutique | Oficina TurboCar | Feira Verde | Dra. Marina Silva</td>
-                        <td><a href="https://github.com/paulo-henrique-svg"
-                                target="_blank">github.com/paulo-henrique-svg</a></td>
-                    </tr>
-                    <tr>
-                        <td>Luiz Felipe Fabiano da Silva</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>Adote um Amigo | MLP Boutique | Oficina TurboCar | Feira Verde | Dra. Marina Silva</td>
-                        <td><a href="https://github.com/felipefabianoluiz-ai"
-                                target="_blank">github.com/felipefabianoluiz-ai</a></td>
-                    </tr>
-                    <tr>
-                        <td>Manuela Aparecida da Silva</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>Adote um Amigo | MLP Boutique | Oficina TurboCar | Feira Verde | Dra. Marina Silva</td>
-                        <td><a href="https://github.com/manuelaasilva" target="_blank">github.com/manuelaasilva</a></td>
-                    </tr>
-                    <tr>
-                        <td>Ian Penafort Neves do Nascimento</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>
-                            <a href="https://projeto-fisio-six.vercel.app" target="_blank" class="btn-link">Projeto
-                                Fisio</a><br>
-                            <a href="https://projeto-academia-uuan.vercel.app" target="_blank" class="btn-link">Projeto
-                                Academia</a><br>
-                            Silva & Associados - Advocacia
-                        </td>
-                        <td><a href="https://github.com/ian-eng021" target="_blank">github.com/ian-eng021</a></td>
-                    </tr>
-                    <tr>
-                        <td>Samuel Alves da Silva</td>
-                        <td><span class="tag-turma">Turma A - Tarde</span></td>
-                        <td>
-                            <a href="https://projeto-fisio-six.vercel.app" target="_blank" class="btn-link">Projeto
-                                Fisio</a><br>
-                            <a href="https://projeto-academia-uuan.vercel.app" target="_blank" class="btn-link">Projeto
-                                Academia</a><br>
-                            <a href="https://pericleslanches.com.br/" target="_blank" class="btn-link">Péricles
-                                Lanches</a><br>
-                            Silva & Associados - Advocacia
-                        </td>
-                        <td><a href="https://github.com/samuelalves0207/"
-                                target="_blank">github.com/samuelalves0207/</a></td>
-                    </tr>
-                    <tr>
-                        <td>Lucas Henrique Ribeiro da Silva</td>
-                        <td><span class="tag-turma">Turma B - Manhã</span></td>
-                        <td><a href="https://mendescar.vercel.app/" target="_blank" class="btn-link">Mendes Car</a></td>
-                        <td><a href="https://github.com/LucasRiberio7/apexzone"
-                                target="_blank">github.com/LucasRiberio7/apexzone</a></td>
-                    </tr>
-                    <tr>
-                        <td>Felipe Mendes do Prado Santos</td>
-                        <td><span class="tag-turma">Turma B - Manhã</span></td>
-                        <td><a href="https://mendescar.vercel.app/" target="_blank" class="btn-link">Mendes Car</a></td>
-                        <td><a href="https://github.com/felipemendesdopradosantos-dev/mendescar"
-                                target="_blank">github.com/felipemendesdopradosantos-dev/mendescar</a></td>
-                    </tr>
-                    <tr>
-                        <td>Diego William Farias Quirino</td>
-                        <td><span class="tag-turma">Turma B - Manhã</span></td>
-                        <td><a href="https://mendescar.vercel.app/" target="_blank" class="btn-link">Mendes Car</a></td>
-                        <td><a href="https://github.com/diegoventoforte-hash"
-                                target="_blank">github.com/diegoventoforte-hash</a></td>
-                    </tr>
-                    <tr>
-                        <td>Wilson de Carvalho Silva</td>
-                        <td><span class="tag-turma">Turma B - Tarde</span></td>
-                        <td><a href="https://projetos-finais-lilac.vercel.app/" target="_blank"
-                                class="btn-link">Projetos Finais</a></td>
-                        <td><a href="https://github.com/Wilson1407/projeto_final-2026"
-                                target="_blank">github.com/Wilson1407/projeto_final-2026</a></td>
-                    </tr>
-                    <tr>
-                        <td>Maria Eduarda Godoy Soares</td>
-                        <td><span class="tag-turma">Turma B - Tarde</span></td>
-                        <td><a href="https://projetos-finais-lilac.vercel.app/" target="_blank"
-                                class="btn-link">Projetos Finais</a></td>
-                        <td><a href="https://github.com/maliquegodoy" target="_blank">github.com/maliquegodoy</a></td>
-                    </tr>
-                    <tr>
-                        <td>Leonardo Santana de Oliveira dos Santos</td>
-                        <td><span class="tag-turma">Turma B - Tarde</span></td>
-                        <td><a href="https://projetos-finais-lilac.vercel.app/" target="_blank"
-                                class="btn-link">Projetos Finais</a></td>
-                        <td><a href="https://github.com/leonardoemvocacao"
-                                target="_blank">github.com/leonardoemvocacao</a></td>
-                    </tr>
-                    <tr>
-                        <td>Gustavo Rodrigues Araújo</td>
-                        <td><span class="tag-turma">Turma B - Tarde</span></td>
-                        <td><a href="https://projetos-finais-lilac.vercel.app/" target="_blank"
-                                class="btn-link">Projetos Finais</a></td>
-                        <td><a href="https://github.com/gustavorochaemvocacao/projeto-final-2026-2"
-                                target="_blank">github.com/gustavorochaemvocacao/projeto-final-2026-2</a></td>
-                    </tr>
-                    <tr>
-                        <td>Gustavo Rocha De Jesus Dos Reis</td>
-                        <td><span class="tag-turma">Turma B - Tarde</span></td>
-                        <td><a href="https://projeto-final-2026-2.vercel.app/" target="_blank" class="btn-link">Projeto
-                                Final Vercel</a></td>
-                        <td><a href="https://github.com/gustavorochaemvocacao"
-                                target="_blank">github.com/gustavorochaemvocacao</a></td>
-                    </tr>
-                    <tr>
-                        <td>Felipe Barros de Lima</td>
-                        <td><span class="tag-turma">Turma B - Tarde</span></td>
-                        <td><a href="https://projeto-final-2026-2.vercel.app/" target="_blank" class="btn-link">Projeto
-                                Final Vercel</a></td>
-                        <td><a href="https://github.com/fellipeemvocacao/projeto-final-2026-2"
-                                target="_blank">github.com/fellipeemvocacao/projeto-final-2026-2</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
+    <div class="hero-content container">
+      <p class="eyebrow">EXPOSIÇÃO DE PROJETOS • 2026-2</p>
+      <h1>Projetos finais<br><span>que merecem ser vistos.</span></h1>
+      <p class="lead">Uma vitrine dos trabalhos desenvolvidos pelos jovens do curso de Web Design da Vocação.</p>
+      
+      <div class="hero-stats">
+        <div><strong id="topCount">0</strong><span>em destaque</span></div>
+        <div><strong id="groupsCount">0</strong><span>grupos / equipes</span></div>
+        <div><strong>HTML · CSS · JS</strong><span>tecnologias</span></div>
+      </div>
     </div>
+  </header>
 
-    <!-- JAVASCRIPT CORRIGIDO -->
-    <script>
-        function filtrarProjetosComDeploy() {
-            const linhas = document.querySelectorAll("#tabelaProjetos tbody tr");
+  <main id="projetos" class="container">
+    
+    <!-- SEÇÃO 1: TOP 11 DESTAQUES -->
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow" style="color: var(--accent);">01 • DESTAQUES</p>
+        <h2>Top 11</h2>
+        <p>Projetos selecionados em destaque com os motivos de cada reconhecimento.</p>
+      </div>
+      <div id="topGrid" class="grid"></div>
+    </section>
 
-            linhas.forEach(linha => {
-                // A 3ª coluna (índice 2) contém a célula dos links executáveis
-                const colunaExecutavel = linha.children[2];
+    <!-- SEÇÃO 2: GRUPOS E EQUIPES -->
+    <section class="section other-section">
+      <div class="section-heading">
+        <p class="eyebrow" style="color: var(--accent);">02 • GALERIA DE EQUIPES</p>
+        <h2>Projetos e Grupos</h2>
+        <p>Todos os grupos, integrantes e links para os projetos executáveis e repositórios.</p>
+      </div>
+      <div id="otherGrid" class="grid"></div>
+    </section>
 
-                // Verifica se existe pelo menos um link ativo com a classe .btn-link
-                const possuiLinkValido = colunaExecutavel.querySelector("a.btn-link") !== null;
+  </main>
 
-                if (!possuiLinkValido) {
-                    linha.style.display = "none";
-                } else {
-                    linha.style.display = "";
-                }
-            });
+  <footer>
+    <div class="container">
+      <p>Vocação • Curso de Web Design 2026-2</p>
+    </div>
+  </footer>
 
-            // Alterna a visibilidade dos botões de filtro
-            document.getElementById("btnFiltrar").style.display = "none";
-            document.getElementById("btnRestaurar").style.display = "inline-block";
-        }
+  <!-- =========================================================
+       DOCUMENTAÇÃO JAVASCRIPT:
+       1. Importação do arquivo 'data.js' para disponibilizar os dados.
+       2. Script de leitura dos dados e geração do HTML dinâmico.
+       ========================================================= -->
+  <script src="data.js"></script>
 
-        function restaurarTabela() {
-            const linhas = document.querySelectorAll("#tabelaProjetos tbody tr");
+  <script>
+    // DOCUMENTAÇÃO:
+    // Função auxiliar para evitar problemas de segurança (XSS) ao inserir textos na tela.
+    function sanitize(text = '') {
+      return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
 
-            linhas.forEach(linha => {
-                linha.style.display = "";
-            });
+    // DOCUMENTAÇÃO: Renderiza a lista de cartões do Top 11
+    function renderTop11() {
+      const topGrid = document.getElementById('topGrid');
+      
+      // Atualiza o contador no topo da página
+      document.getElementById('topCount').textContent = top11.length;
 
-            document.getElementById("btnFiltrar").style.display = "inline-block";
-            document.getElementById("btnRestaurar").style.display = "none";
-        }
-    </script>
+      // Mapeia os dados do array 'top11' em blocos de HTML
+      const htmlContent = top11.map(item => {
+        // Verifica se existem links disponíveis
+        const siteBtn = item.site 
+          ? `<a class="btn primary" href="${sanitize(item.site)}" target="_blank" rel="noopener">Ver projeto ↗</a>` 
+          : '';
+          
+        const githubBtn = item.github 
+          ? `<a class="btn" href="${sanitize(item.github)}" target="_blank" rel="noopener">GitHub ↗</a>` 
+          : '';
 
+        return `
+          <article class="card top-card">
+            <div class="rank">#${item.rank}</div>
+            <div class="project">${sanitize(item.project)}</div>
+            <div class="student">${sanitize(item.student)}</div>
+            <div class="class-badge">${sanitize(item.class)}</div>
+            
+            <div class="why-box">
+              <strong>Por que está no destaque?</strong><br>
+              ${sanitize(item.why)}
+            </div>
+
+            ${item.team ? '<span class="tag-team">👥 Projeto em Equipe</span>' : ''}
+
+            <div class="actions">
+              ${siteBtn}
+              ${githubBtn}
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      topGrid.innerHTML = htmlContent;
+    }
+
+    // DOCUMENTAÇÃO: Renderiza a lista de cartões dos Grupos
+    function renderGroups() {
+      const otherGrid = document.getElementById('otherGrid');
+
+      // Atualiza o contador de grupos no topo da página
+      document.getElementById('groupsCount').textContent = groups.length;
+
+      // Mapeia os dados do array 'groups' em blocos de HTML
+      const htmlContent = groups.map(group => {
+        // Gera a lista de integrantes
+        const membersText = group.members.map(m => sanitize(m)).join(' · ');
+
+        // Gera a lista de links para os sites/projetos
+        const linksHTML = group.links.map(link => {
+          const [title, url] = link;
+          return `<a class="link-item" href="${sanitize(url)}" target="_blank" rel="noopener">🌐 ${sanitize(title)} ↗</a>`;
+        }).join('');
+
+        // Gera a lista de repositórios do GitHub
+        const reposHTML = group.github.map(repoUrl => {
+          const repoName = repoUrl.replace('https://github.com/', '');
+          return `<a class="link-item repo" href="${sanitize(repoUrl)}" target="_blank" rel="noopener">💻 ${sanitize(repoName)} ↗</a>`;
+        }).join('');
+
+        return `
+          <article class="card">
+            <span class="tag-team">👥 Equipe</span>
+            <div class="project">${sanitize(group.project)}</div>
+            <div class="class-badge">${sanitize(group.class)}</div>
+            
+            <div class="members-list">
+              <strong>Integrantes:</strong>
+              ${membersText}
+            </div>
+
+            <div class="links-block">
+              <strong>Projetos Executáveis:</strong>
+              ${linksHTML}
+            </div>
+
+            <div class="links-block">
+              <strong>Repositórios GitHub:</strong>
+              ${reposHTML}
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      otherGrid.innerHTML = htmlContent;
+    }
+
+    // DOCUMENTAÇÃO: Executa a renderização das duas seções assim que a página é carregada
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTop11();
+      renderGroups();
+    });
+  </script>
 </body>
-
 </html>
